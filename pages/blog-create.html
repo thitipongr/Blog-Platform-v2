@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../index.css" />
+    <script
+      src="https://kit.fontawesome.com/52bb17f3be.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Blog Platform</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="container">
+          <div class="nav-con">
+            <div class="logo" onclick="menuExpand()">
+              <a href="#"> <i class="fa-solid fa-blog"> </i> Blog Platform </a>
+            </div>
+            <ul class="menu" id="nav-menu">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Create Blog</a></li>
+              <div>
+                <a href="#" id="icon-search"
+                  ><i class="fa-solid fa-magnifying-glass"></i
+                ></a>
+                <input type="text" class="nav-search-box" />
+              </div>
+              <div>
+                <button class="nav-login-btn">Log in</button>
+                <button class="nav-signup-btn">Sign up</button>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- หน้าเขียนบล็อก (Create Blog Page)ฟอร์มสำหรับการเขียนบล็อก รวมถึงชื่อบล็อก, หมวดหมู่, และเนื้อหา
+ปุ่มสำหรับยืนยันการสร้างบล็อก -->
+    <main>
+      <section class="create-blog-main">
+        <div class="container">
+          <div class="create-blog-con">
+            <form action="">
+              <div class="create-blog-title-con">
+                <label for="title"><h2>Title:</h2></label>
+                <input type="text" id="title" required />
+              </div>
+
+              <div class="create-blog-cover-con">
+                <label for="cover"><h2>Blog Cover:</h2></label>
+                <input type="file" id="cover" accept="image/png, image/jpeg" />
+              </div>
+
+              <div class="create-blog-category-con">
+                <label for="category"><h2>Category:</h2></label>
+                <select id="category">
+                  <option value="category-0"></option>
+                  <option value="category-1">Lorem.</option>
+                  <option value="category-2">Quia?</option>
+                  <option value="category-3">Architecto.</option>
+                  <option value="category-4">Consequuntur!</option>
+                  <option value="category-5">Amet.</option>
+                  <option value="category-6">Provident!</option>
+                  <option value="category-7">Ratione!</option>
+                  <option value="category-8">Lorem!</option>
+                  <option value="category-9">Ipsum.</option>
+                  <option value="category-10">Dolor.</option>
+                </select>
+              </div>
+
+              <div class="create-blog-content-con">
+                <label for="content"><h2>Content:</h2></label>
+                <textarea id="content" required></textarea>
+              </div>
+
+              <div class="create-blog-button-con">
+                <button class="create-blog-public-btn">Public</button>
+                <button class="create-blog-draft-btn">Save Draft</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="footer-con">
+          <div class="footer-right">
+            <div class="footer-right-top">© 2023 Blog Platform.</div>
+            <div class="footer-right-bottom">All right reserved</div>
+          </div>
+          <div class="footer-policy">
+            <div class="footer-policy-terms">Terms</div>
+            <div class="footer-policy-privacy">Privacy</div>
+            <div class="footer-policy-cookies">Cookies</div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      const menuExpand = () => {
+        const menuList = document.getElementById("nav-menu");
+        console.log(menuList.className);
+        if (menuList.className === "menu") {
+          menuList.className += " menu-display";
+        } else {
+          menuList.className = "menu";
+        }
+      };
+
+      mobiscroll.select("#multiple-select", {
+        inputElement: document.getElementById("my-input"),
+        touchUi: false,
+      });
+    </script>
+  </body>
+</html>

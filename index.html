@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <script
+      src="https://kit.fontawesome.com/52bb17f3be.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Blog Platform</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="container">
+          <div class="nav-con">
+            <div class="logo" onclick="menuExpand()">
+              <a href="#"> <i class="fa-solid fa-blog"> </i> Blog Platform </a>
+            </div>
+            <ul class="menu" id="nav-menu">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Create Blog</a></li>
+              <div>
+                <a href="#" id="icon-search"
+                  ><i class="fa-solid fa-magnifying-glass"></i
+                ></a>
+                <input type="text" class="nav-search-box" />
+              </div>
+              <div>
+                <button class="nav-login-btn">Log in</button>
+                <button class="nav-signup-btn">Sign up</button>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="hero-con">
+            <h1>Lorem ipsum dolor, sit amet consectetur</h1>
+            <div class="hero-img">
+              <img
+                src="https://images.pexels.com/photos/1067333/pexels-photo-1067333.jpeg?auto=compress&cs=tinysrgb&w=2560"
+                alt="hero-img"
+              />
+            </div>
+            <div class="hero-info-con">
+              <div class="hero-info-article">
+                <h3>Lorem ipsum dolor sit amet consectetur</h3>
+                <i class="fa-solid fa-up-right-from-square"></i>
+              </div>
+              <div class="hero-info-detail-con">
+                <div class="hero-info-detail-maindetail-con">
+                  <div class="hero-info-detail-maindetail">
+                    <p>
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                      Hic, quidem non quam exercitationem odio autem voluptas
+                      voluptatem incidunt laboriosam facilis
+                    </p>
+                  </div>
+                </div>
+                <div class="hero-info-detail-subdetail-con">
+                  <div class="hero-info-writer-con">
+                    <div class="hero-info-writer-detail-con">
+                      <div class="hero-info-writer-detail-label">
+                        Written by
+                      </div>
+                      <div class="hero-info-writer-detail-info-con">
+                        <div class="hero-info-writer-detail-info-pic">
+                          <img
+                            src="https://images.pexels.com/photos/598917/pexels-photo-598917.jpeg?auto=compress&cs=tinysrgb&w=25"
+                            alt="hero-writer-img"
+                          />
+                        </div>
+                        <div class="hero-info-writer-detail-info-name">
+                          Lorem ipsum
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hero-info-publihed-con">
+                    <div class="hero-info-publihed-lable">Published on</div>
+                    <div class="hero-info-publihed-date">09 October 2023</div>
+                  </div>
+                </div>
+                <div class="hero-info-detail-contegory-con">
+                  <div class="hero-info-contegory-label">Contegory</div>
+                  <div class="hero-info-contegory-info-con">
+                    <div class="hero-info-contegory-info">Lorem</div>
+                    <div class="hero-info-contegory-info">Ipsum</div>
+                    <div class="hero-info-contegory-info">Dolor</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="main-blog-list">
+        <div class="container">
+          <div class="main-blog-list-con">
+            <div class="main-blog-list-item">
+              <div class="main-blog-list-img">
+                <img
+                  src="https://images.pexels.com/photos/937787/pexels-photo-937787.jpeg?auto=compress&cs=tinysrgb&w=2560"
+                  alt="main-blog-list-img"
+                />
+              </div>
+              <div class="main-blog-list-info-con">
+                <div class="main-blog-list-info-article">
+                  <h3>Lorem ipsum dolor sit amet consectetur</h3>
+                  <i class="fa-solid fa-up-right-from-square"></i>
+                </div>
+                <div class="main-blog-list-info-detail-con">
+                  <div class="main-blog-list-info-detail-maindetail-con">
+                    <div class="main-blog-list-info-detail-maindetail">
+                      <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Hic, quidem non quam exercitationem odio autem
+                        voluptas voluptatem incidunt laboriosam facilis
+                      </p>
+                    </div>
+                  </div>
+                  <div class="main-blog-list-info-detail-subdetail-con">
+                    <div class="main-blog-list-info-writer-con">
+                      <div class="main-blog-list-info-writer-detail-con">
+                        <div class="main-blog-list-info-writer-detail-label">
+                          Written by
+                        </div>
+                        <div class="main-blog-list-info-writer-detail-info-con">
+                          <div
+                            class="main-blog-list-info-writer-detail-info-pic"
+                          >
+                            <img
+                              src="https://images.pexels.com/photos/712513/pexels-photo-712513.jpeg?auto=compress&cs=tinysrgb&w=25"
+                              alt="main-blog-list-writer-img"
+                            />
+                          </div>
+                          <div
+                            class="main-blog-list-info-writer-detail-info-name"
+                          >
+                            Lorem ipsum
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="main-blog-list-info-publihed-con">
+                      <div class="main-blog-list-info-publihed-lable">
+                        Published on
+                      </div>
+                      <div class="main-blog-list-info-publihed-date">
+                        09 October 2023
+                      </div>
+                    </div>
+                  </div>
+                  <div class="main-blog-list-info-detail-contegory-con">
+                    <div class="main-blog-list-info-contegory-label">
+                      Contegory
+                    </div>
+                    <div class="main-blog-list-info-contegory-info-con">
+                      <div class="main-blog-list-info-contegory-info">
+                        Lorem
+                      </div>
+                      <div class="main-blog-list-info-contegory-info">
+                        Ipsum
+                      </div>
+                      <div class="main-blog-list-info-contegory-info">
+                        Dolor
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="main-blog-list-item">
+              <div class="main-blog-list-img">
+                <img
+                  src="https://images.pexels.com/photos/1114880/pexels-photo-1114880.jpeg?auto=compress&cs=tinysrgb&w=2560"
+                  alt="main-blog-list-img"
+                />
+              </div>
+              <div class="main-blog-list-info-con">
+                <div class="main-blog-list-info-article">
+                  <h3>Lorem ipsum dolor sit amet consectetur</h3>
+                  <i class="fa-solid fa-up-right-from-square"></i>
+                </div>
+                <div class="main-blog-list-info-detail-con">
+                  <div class="main-blog-list-info-detail-maindetail-con">
+                    <div class="main-blog-list-info-detail-maindetail">
+                      <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Hic, quidem non quam exercitationem odio autem
+                        voluptas voluptatem incidunt laboriosam facilis
+                      </p>
+                    </div>
+                  </div>
+                  <div class="main-blog-list-info-detail-subdetail-con">
+                    <div class="main-blog-list-info-writer-con">
+                      <div class="main-blog-list-info-writer-detail-con">
+                        <div class="main-blog-list-info-writer-detail-label">
+                          Written by
+                        </div>
+                        <div class="main-blog-list-info-writer-detail-info-con">
+                          <div
+                            class="main-blog-list-info-writer-detail-info-pic"
+                          >
+                            <img
+                              src="https://images.pexels.com/photos/103123/pexels-photo-103123.jpeg?auto=compress&cs=tinysrgb&w=25"
+                              alt="main-blog-list-writer-img"
+                            />
+                          </div>
+                          <div
+                            class="main-blog-list-info-writer-detail-info-name"
+                          >
+                            Lorem ipsum
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="main-blog-list-info-publihed-con">
+                      <div class="main-blog-list-info-publihed-lable">
+                        Published on
+                      </div>
+                      <div class="main-blog-list-info-publihed-date">
+                        09 October 2023
+                      </div>
+                    </div>
+                  </div>
+                  <div class="main-blog-list-info-detail-contegory-con">
+                    <div class="main-blog-list-info-contegory-label">
+                      Contegory
+                    </div>
+                    <div class="main-blog-list-info-contegory-info-con">
+                      <div class="main-blog-list-info-contegory-info">
+                        Lorem
+                      </div>
+                      <div class="main-blog-list-info-contegory-info">
+                        Ipsum
+                      </div>
+                      <div class="main-blog-list-info-contegory-info">
+                        Dolor
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="main-blog-list-item">
+              <div class="main-blog-list-img">
+                <img
+                  src="https://images.pexels.com/photos/3551616/pexels-photo-3551616.jpeg?auto=compress&cs=tinysrgb&w=2560"
+                  alt="main-blog-list-img"
+                />
+              </div>
+              <div class="main-blog-list-info-con">
+                <div class="main-blog-list-info-article">
+                  <h3>Lorem ipsum dolor sit amet consectetur</h3>
+                  <i class="fa-solid fa-up-right-from-square"></i>
+                </div>
+                <div class="main-blog-list-info-detail-con">
+                  <div class="main-blog-list-info-detail-maindetail-con">
+                    <div class="main-blog-list-info-detail-maindetail">
+                      <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Hic, quidem non quam exercitationem odio autem
+                        voluptas voluptatem incidunt laboriosam facilis
+                      </p>
+                    </div>
+                  </div>
+                  <div class="main-blog-list-info-detail-subdetail-con">
+                    <div class="main-blog-list-info-writer-con">
+                      <div class="main-blog-list-info-writer-detail-con">
+                        <div class="main-blog-list-info-writer-detail-label">
+                          Written by
+                        </div>
+                        <div class="main-blog-list-info-writer-detail-info-con">
+                          <div
+                            class="main-blog-list-info-writer-detail-info-pic"
+                          >
+                            <img
+                              src="https://images.pexels.com/photos/447329/pexels-photo-447329.jpeg?auto=compress&cs=tinysrgb&w=25"
+                              alt="main-blog-list-writer-img"
+                            />
+                          </div>
+                          <div
+                            class="main-blog-list-info-writer-detail-info-name"
+                          >
+                            Lorem ipsum
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="main-blog-list-info-publihed-con">
+                      <div class="main-blog-list-info-publihed-lable">
+                        Published on
+                      </div>
+                      <div class="main-blog-list-info-publihed-date">
+                        09 October 2023
+                      </div>
+                    </div>
+                  </div>
+                  <div class="main-blog-list-info-detail-contegory-con">
+                    <div class="main-blog-list-info-contegory-label">
+                      Contegory
+                    </div>
+                    <div class="main-blog-list-info-contegory-info-con">
+                      <div class="main-blog-list-info-contegory-info">
+                        Lorem
+                      </div>
+                      <div class="main-blog-list-info-contegory-info">
+                        Ipsum
+                      </div>
+                      <div class="main-blog-list-info-contegory-info">
+                        Dolor
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="main-blog-list-item">
+              <div class="main-blog-list-img">
+                <img
+                  src="https://images.pexels.com/photos/3804899/pexels-photo-3804899.jpeg?auto=compress&cs=tinysrgb&w=2560"
+                  alt="main-blog-list-img"
+                />
+              </div>
+              <div class="main-blog-list-info-con">
+                <div class="main-blog-list-info-article">
+                  <h3>Lorem ipsum dolor sit amet consectetur</h3>
+                  <i class="fa-solid fa-up-right-from-square"></i>
+                </div>
+                <div class="main-blog-list-info-detail-con">
+                  <div class="main-blog-list-info-detail-maindetail-con">
+                    <div class="main-blog-list-info-detail-maindetail">
+                      <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Hic, quidem non quam exercitationem odio autem
+                        voluptas voluptatem incidunt laboriosam facilis
+                      </p>
+                    </div>
+                  </div>
+                  <div class="main-blog-list-info-detail-subdetail-con">
+                    <div class="main-blog-list-info-writer-con">
+                      <div class="main-blog-list-info-writer-detail-con">
+                        <div class="main-blog-list-info-writer-detail-label">
+                          Written by
+                        </div>
+                        <div class="main-blog-list-info-writer-detail-info-con">
+                          <div
+                            class="main-blog-list-info-writer-detail-info-pic"
+                          >
+                            <img
+                              src="https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=25"
+                              alt="main-blog-list-writer-img"
+                            />
+                          </div>
+                          <div
+                            class="main-blog-list-info-writer-detail-info-name"
+                          >
+                            Lorem ipsum
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="main-blog-list-info-publihed-con">
+                      <div class="main-blog-list-info-publihed-lable">
+                        Published on
+                      </div>
+                      <div class="main-blog-list-info-publihed-date">
+                        09 October 2023
+                      </div>
+                    </div>
+                  </div>
+                  <div class="main-blog-list-info-detail-contegory-con">
+                    <div class="main-blog-list-info-contegory-label">
+                      Contegory
+                    </div>
+                    <div class="main-blog-list-info-contegory-info-con">
+                      <div class="main-blog-list-info-contegory-info">
+                        Lorem
+                      </div>
+                      <div class="main-blog-list-info-contegory-info">
+                        Ipsum
+                      </div>
+                      <div class="main-blog-list-info-contegory-info">
+                        Dolor
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="main-blog-list-item">
+              <div class="main-blog-list-img">
+                <img
+                  src="https://images.pexels.com/photos/20045/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=2560"
+                  alt="main-blog-list-img"
+                />
+              </div>
+              <div class="main-blog-list-info-con">
+                <div class="main-blog-list-info-article">
+                  <h3>Lorem ipsum dolor sit amet consectetur</h3>
+                  <i class="fa-solid fa-up-right-from-square"></i>
+                </div>
+                <div class="main-blog-list-info-detail-con">
+                  <div class="main-blog-list-info-detail-maindetail-con">
+                    <div class="main-blog-list-info-detail-maindetail">
+                      <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Hic, quidem non quam exercitationem odio autem
+                        voluptas voluptatem incidunt laboriosam facilis
+                      </p>
+                    </div>
+                  </div>
+                  <div class="main-blog-list-info-detail-subdetail-con">
+                    <div class="main-blog-list-info-writer-con">
+                      <div class="main-blog-list-info-writer-detail-con">
+                        <div class="main-blog-list-info-writer-detail-label">
+                          Written by
+                        </div>
+                        <div class="main-blog-list-info-writer-detail-info-con">
+                          <div
+                            class="main-blog-list-info-writer-detail-info-pic"
+                          >
+                            <img
+                              src="https://images.pexels.com/photos/1065084/pexels-photo-1065084.jpeg?auto=compress&cs=tinysrgb&w=25"
+                              alt="main-blog-list-writer-img"
+                            />
+                          </div>
+                          <div
+                            class="main-blog-list-info-writer-detail-info-name"
+                          >
+                            Lorem ipsum
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="main-blog-list-info-publihed-con">
+                      <div class="main-blog-list-info-publihed-lable">
+                        Published on
+                      </div>
+                      <div class="main-blog-list-info-publihed-date">
+                        09 October 2023
+                      </div>
+                    </div>
+                  </div>
+                  <div class="main-blog-list-info-detail-contegory-con">
+                    <div class="main-blog-list-info-contegory-label">
+                      Contegory
+                    </div>
+                    <div class="main-blog-list-info-contegory-info-con">
+                      <div class="main-blog-list-info-contegory-info">
+                        Lorem
+                      </div>
+                      <div class="main-blog-list-info-contegory-info">
+                        Ipsum
+                      </div>
+                      <div class="main-blog-list-info-contegory-info">
+                        Dolor
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="main-blog-list-item">
+              <div class="main-blog-list-img">
+                <img
+                  src="https://images.pexels.com/photos/34066/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=2560"
+                  alt="main-blog-list-img"
+                />
+              </div>
+              <div class="main-blog-list-info-con">
+                <div class="main-blog-list-info-article">
+                  <h3>Lorem ipsum dolor sit amet consectetur</h3>
+                  <i class="fa-solid fa-up-right-from-square"></i>
+                </div>
+                <div class="main-blog-list-info-detail-con">
+                  <div class="main-blog-list-info-detail-maindetail-con">
+                    <div class="main-blog-list-info-detail-maindetail">
+                      <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Hic, quidem non quam exercitationem odio autem
+                        voluptas voluptatem incidunt laboriosam facilis
+                      </p>
+                    </div>
+                  </div>
+                  <div class="main-blog-list-info-detail-subdetail-con">
+                    <div class="main-blog-list-info-writer-con">
+                      <div class="main-blog-list-info-writer-detail-con">
+                        <div class="main-blog-list-info-writer-detail-label">
+                          Written by
+                        </div>
+                        <div class="main-blog-list-info-writer-detail-info-con">
+                          <div
+                            class="main-blog-list-info-writer-detail-info-pic"
+                          >
+                            <img
+                              src="https://images.pexels.com/photos/874158/pexels-photo-874158.jpeg?auto=compress&cs=tinysrgb&w=25"
+                              alt="main-blog-list-writer-img"
+                            />
+                          </div>
+                          <div
+                            class="main-blog-list-info-writer-detail-info-name"
+                          >
+                            Lorem ipsum
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="main-blog-list-info-publihed-con">
+                      <div class="main-blog-list-info-publihed-lable">
+                        Published on
+                      </div>
+                      <div class="main-blog-list-info-publihed-date">
+                        09 October 2023
+                      </div>
+                    </div>
+                  </div>
+                  <div class="main-blog-list-info-detail-contegory-con">
+                    <div class="main-blog-list-info-contegory-label">
+                      Contegory
+                    </div>
+                    <div class="main-blog-list-info-contegory-info-con">
+                      <div class="main-blog-list-info-contegory-info">
+                        Lorem
+                      </div>
+                      <div class="main-blog-list-info-contegory-info">
+                        Ipsum
+                      </div>
+                      <div class="main-blog-list-info-contegory-info">
+                        Dolor
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="main-blog-list-item">
+              <div class="main-blog-list-img">
+                <img
+                  src="https://images.pexels.com/photos/136039/pexels-photo-136039.jpeg?auto=compress&cs=tinysrgb&w=2560"
+                  alt="main-blog-list-img"
+                />
+              </div>
+              <div class="main-blog-list-info-con">
+                <div class="main-blog-list-info-article">
+                  <h3>Lorem ipsum dolor sit amet consectetur</h3>
+                  <i class="fa-solid fa-up-right-from-square"></i>
+                </div>
+                <div class="main-blog-list-info-detail-con">
+                  <div class="main-blog-list-info-detail-maindetail-con">
+                    <div class="main-blog-list-info-detail-maindetail">
+                      <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Hic, quidem non quam exercitationem odio autem
+                        voluptas voluptatem incidunt laboriosam facilis
+                      </p>
+                    </div>
+                  </div>
+                  <div class="main-blog-list-info-detail-subdetail-con">
+                    <div class="main-blog-list-info-writer-con">
+                      <div class="main-blog-list-info-writer-detail-con">
+                        <div class="main-blog-list-info-writer-detail-label">
+                          Written by
+                        </div>
+                        <div class="main-blog-list-info-writer-detail-info-con">
+                          <div
+                            class="main-blog-list-info-writer-detail-info-pic"
+                          >
+                            <img
+                              src="https://images.pexels.com/photos/834863/pexels-photo-834863.jpeg?auto=compress&cs=tinysrgb&w=25"
+                              alt="main-blog-list-writer-img"
+                            />
+                          </div>
+                          <div
+                            class="main-blog-list-info-writer-detail-info-name"
+                          >
+                            Lorem ipsum
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="main-blog-list-info-publihed-con">
+                      <div class="main-blog-list-info-publihed-lable">
+                        Published on
+                      </div>
+                      <div class="main-blog-list-info-publihed-date">
+                        09 October 2023
+                      </div>
+                    </div>
+                  </div>
+                  <div class="main-blog-list-info-detail-contegory-con">
+                    <div class="main-blog-list-info-contegory-label">
+                      Contegory
+                    </div>
+                    <div class="main-blog-list-info-contegory-info-con">
+                      <div class="main-blog-list-info-contegory-info">
+                        Lorem
+                      </div>
+                      <div class="main-blog-list-info-contegory-info">
+                        Ipsum
+                      </div>
+                      <div class="main-blog-list-info-contegory-info">
+                        Dolor
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="main-blog-list-item">
+              <div class="main-blog-list-img">
+                <img
+                  src="https://images.pexels.com/photos/925742/pexels-photo-925742.jpeg?auto=compress&cs=tinysrgb&w=2560"
+                  alt="main-blog-list-img"
+                />
+              </div>
+              <div class="main-blog-list-info-con">
+                <div class="main-blog-list-info-article">
+                  <h3>Lorem ipsum dolor sit amet consectetur</h3>
+                  <i class="fa-solid fa-up-right-from-square"></i>
+                </div>
+                <div class="main-blog-list-info-detail-con">
+                  <div class="main-blog-list-info-detail-maindetail-con">
+                    <div class="main-blog-list-info-detail-maindetail">
+                      <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Hic, quidem non quam exercitationem odio autem
+                        voluptas voluptatem incidunt laboriosam facilis
+                      </p>
+                    </div>
+                  </div>
+                  <div class="main-blog-list-info-detail-subdetail-con">
+                    <div class="main-blog-list-info-writer-con">
+                      <div class="main-blog-list-info-writer-detail-con">
+                        <div class="main-blog-list-info-writer-detail-label">
+                          Written by
+                        </div>
+                        <div class="main-blog-list-info-writer-detail-info-con">
+                          <div
+                            class="main-blog-list-info-writer-detail-info-pic"
+                          >
+                            <img
+                              src="https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=25"
+                              alt="main-blog-list-writer-img"
+                            />
+                          </div>
+                          <div
+                            class="main-blog-list-info-writer-detail-info-name"
+                          >
+                            Lorem ipsum
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="main-blog-list-info-publihed-con">
+                      <div class="main-blog-list-info-publihed-lable">
+                        Published on
+                      </div>
+                      <div class="main-blog-list-info-publihed-date">
+                        09 October 2023
+                      </div>
+                    </div>
+                  </div>
+                  <div class="main-blog-list-info-detail-contegory-con">
+                    <div class="main-blog-list-info-contegory-label">
+                      Contegory
+                    </div>
+                    <div class="main-blog-list-info-contegory-info-con">
+                      <div class="main-blog-list-info-contegory-info">
+                        Lorem
+                      </div>
+                      <div class="main-blog-list-info-contegory-info">
+                        Ipsum
+                      </div>
+                      <div class="main-blog-list-info-contegory-info">
+                        Dolor
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="main-blog-list-item">
+              <div class="main-blog-list-img">
+                <img
+                  src="https://images.pexels.com/photos/1128121/pexels-photo-1128121.jpeg?auto=compress&cs=tinysrgb&w=2560"
+                  alt="main-blog-list-img"
+                />
+              </div>
+              <div class="main-blog-list-info-con">
+                <div class="main-blog-list-info-article">
+                  <h3>Lorem ipsum dolor sit amet consectetur</h3>
+                  <i class="fa-solid fa-up-right-from-square"></i>
+                </div>
+                <div class="main-blog-list-info-detail-con">
+                  <div class="main-blog-list-info-detail-maindetail-con">
+                    <div class="main-blog-list-info-detail-maindetail">
+                      <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Hic, quidem non quam exercitationem odio autem
+                        voluptas voluptatem incidunt laboriosam facilis
+                      </p>
+                    </div>
+                  </div>
+                  <div class="main-blog-list-info-detail-subdetail-con">
+                    <div class="main-blog-list-info-writer-con">
+                      <div class="main-blog-list-info-writer-detail-con">
+                        <div class="main-blog-list-info-writer-detail-label">
+                          Written by
+                        </div>
+                        <div class="main-blog-list-info-writer-detail-info-con">
+                          <div
+                            class="main-blog-list-info-writer-detail-info-pic"
+                          >
+                            <img
+                              src="https://images.pexels.com/photos/1587009/pexels-photo-1587009.jpeg?auto=compress&cs=tinysrgb&w=25"
+                              alt="main-blog-list-writer-img"
+                            />
+                          </div>
+                          <div
+                            class="main-blog-list-info-writer-detail-info-name"
+                          >
+                            Lorem ipsum
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="main-blog-list-info-publihed-con">
+                      <div class="main-blog-list-info-publihed-lable">
+                        Published on
+                      </div>
+                      <div class="main-blog-list-info-publihed-date">
+                        09 October 2023
+                      </div>
+                    </div>
+                  </div>
+                  <div class="main-blog-list-info-detail-contegory-con">
+                    <div class="main-blog-list-info-contegory-label">
+                      Contegory
+                    </div>
+                    <div class="main-blog-list-info-contegory-info-con">
+                      <div class="main-blog-list-info-contegory-info">
+                        Lorem
+                      </div>
+                      <div class="main-blog-list-info-contegory-info">
+                        Ipsum
+                      </div>
+                      <div class="main-blog-list-info-contegory-info">
+                        Dolor
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="pagination">
+        <div class="container">
+          <div class="pagination-con">
+            <div class="pagination-laptop-con">
+              <div class="pagination-laptop-previous">
+                <i class="fa-solid fa-arrow-left"></i>Previous
+              </div>
+              <div class="pagination-laptop-paging">Page 1 of 16</div>
+              <div class="pagination-laptop-next">
+                Next<i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </div>
+            <div class="pagination-mobile-con">
+              <i class="fa-solid fa-spinner"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="footer-con">
+          <div class="footer-right">
+            <div class="footer-right-top">© 2023 Blog Platform.</div>
+            <div class="footer-right-bottom">All right reserved</div>
+          </div>
+          <div class="footer-policy">
+            <div class="footer-policy-terms">Terms</div>
+            <div class="footer-policy-privacy">Privacy</div>
+            <div class="footer-policy-cookies">Cookies</div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      const menuExpand = () => {
+        const menuList = document.getElementById("nav-menu");
+        console.log(menuList.className);
+        if (menuList.className === "menu") {
+          menuList.className += " menu-display";
+        } else {
+          menuList.className = "menu";
+        }
+      };
+    </script>
+  </body>
+</html>
