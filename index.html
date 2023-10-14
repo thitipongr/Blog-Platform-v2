@@ -37,7 +37,7 @@
       </nav>
     </header>
     <main>
-      <section class="hero">
+      <section class="hero" id="section-hero">
         <div class="container">
           <div class="hero-con">
             <h1>Lorem ipsum dolor, sit amet consectetur</h1>
@@ -796,10 +796,15 @@
         </div>
       </div>
     </footer>
+
+    <script
+      type="text/javascript"
+      src="script/Popular Blogs Section/PopularBlogsSection-main.js"
+    ></script>
     <script>
+
       const menuExpand = () => {
         const menuList = document.getElementById("nav-menu");
-        console.log(menuList.className);
         if (menuList.className === "menu") {
           menuList.className += " menu-display";
         } else {
