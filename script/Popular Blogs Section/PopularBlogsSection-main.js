@@ -26,7 +26,11 @@ fetch("mock/blog-data.json")
       </div>
       <div class="category-view">
         <div class="category-list">
-          <div class="category-item">${popularBlogs_data.category}</div>
+          <div 
+            class="category-item" 
+            onclick="location.href = 'pages/category-view.html?category=${popularBlogs_data.category}';">
+            ${popularBlogs_data.category}
+          </div>
         </div>
         <div class="view">${popularBlogs_data.views} views</div>
       </div>

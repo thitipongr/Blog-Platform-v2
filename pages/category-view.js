@@ -1,4 +1,4 @@
-const id = location.search.slice(4);
+const category = location.search.slice(10).replaceAll("%20", " ");
 
 fetch("../mock/blog-data.json")
   .then((response) => response.json())
@@ -13,54 +13,16 @@ fetch("../mock/blog-data.json")
   .then((sortedData) => {
     let setHtml = "";
     sortedData.forEach((sortedData_data) => {
-      setHtml += `<option value="${sortedData_data.category}">${sortedData_data.category}</option>`;
+      if (sortedData_data.category === category) {
+        setHtml += `<option value="${sortedData_data.category}" selected="selected">${sortedData_data.category}</option>`;
+      } else {
+        setHtml += `<option value="${sortedData_data.category}">${sortedData_data.category}</option>`;
+      }
     });
     return setHtml;
   })
   .then((setHtml) => {
     document.getElementById("category").innerHTML += setHtml;
-  })
-  .catch((err) => console.log("error:", err));
-
-fetch("../mock/blog-data.json")
-  .then((response) => response.json())
-  .then((getData) => {
-    let setHtml = "";
-    getData.blogs.map((getDatas_data) => {
-      setHtml += `
-        <div class="popular-blogs-list-item">
-          <div class="img">
-            <img
-              src="${getDatas_data.blog_cover}?auto=compress&cs=tinysrgb&w=2560"
-              alt="popular-blog-list-img"
-            />
-          </div>
-          <div class="title">
-            <h3>${getDatas_data.title}</h3>
-            <i 
-              class="fa-solid fa-up-right-from-square" 
-              onclick="location.href = 'pages/blog-view.html?id=${getDatas_data.id}';"
-            ></i>
-          </div>
-          <div class="content">
-            <p>
-            ${getDatas_data.content}
-            </p>
-          </div>
-          <div class="category-view">
-            <div class="category-list">
-              <div class="category-item">${getDatas_data.category}</div>
-            </div>
-            <div class="view">${getDatas_data.views} views</div>
-          </div>
-        </div>
-      `;
-    });
-
-    return setHtml;
-  })
-  .then((setHtml) => {
-    document.getElementById("popular-blogs-list").innerHTML = setHtml;
   })
   .catch((err) => console.log("error:", err));
 
@@ -161,3 +123,5 @@ const filterCategory = (value) => {
     })
     .catch((err) => console.log("error:", err));
 };
+
+filterCategory(category || "All");
