@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../index.css" />
+    <script
+      src="https://kit.fontawesome.com/52bb17f3be.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Blog Platform</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="container">
+          <div class="nav-con">
+            <div class="logo" onclick="menuExpand()">
+              <a href="#"> <i class="fa-solid fa-blog"> </i> Blog Platform </a>
+            </div>
+            <ul class="menu" id="nav-menu">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="category-view.html">Category</a></li>
+              <li><a href="blog-create.html">Create Blog</a></li>
+              <div>
+                <a onclick="navSearch(`pages`)" id="icon-search"
+                  ><i class="fa-solid fa-magnifying-glass"></i
+                ></a>
+                <input type="text" class="nav-search-box" id="nav-search-box" />
+              </div>
+              <div>
+                <button
+                  class="nav-login-btn"
+                  onclick="location.href = 'profile-view.html';"
+                >
+                  Log in
+                </button>
+                <button
+                  class="nav-signup-btn"
+                  onclick="location.href = 'profile-view.html';"
+                >
+                  Sign up
+                </button>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="search-page-box">
+        <div class="container">
+          <div class="search-page-box-con">
+            <label for="search-page-box"><h2>Search blog:</h2></label>
+            <input
+              onkeydown="filterCategory(value)"
+              type="text"
+              id="search-page-box"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="category-blog-list">
+        <div class="container">
+          <div class="category-blog-list-con" id="popular-blogs-list"></div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="footer-con">
+          <div class="footer-right">
+            <div class="footer-right-top">© 2023 Blog Platform.</div>
+            <div class="footer-right-bottom">All right reserved</div>
+          </div>
+          <div class="footer-policy">
+            <div class="footer-policy-terms">Terms</div>
+            <div class="footer-policy-privacy">Privacy</div>
+            <div class="footer-policy-cookies">Cookies</div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script type="text/javascript" src="../script/navbar.js"></script>
+    <script type="text/javascript" src="search-view.js"></script>
+  </body>
+</html>

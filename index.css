@@ -169,8 +169,8 @@ footer {
   }
 
   main {
-    margin-top: 122px;
-    min-height: calc(100vh - 62px - 122px - 2rem);
+    margin-top: 102px;
+    min-height: calc(100vh - 62px - 102px - 2rem);
   }
 
   main h1 {
@@ -188,6 +188,10 @@ footer {
   }
 
   .hero-con,
+  .profile-info-con {
+    padding-top: 2rem;
+  }
+
   .main-blog-list-con {
     margin: 0 auto;
     width: 80vw;
@@ -441,14 +445,16 @@ footer {
   }
 
   .create-blog-con h2,
-  .find-category-con h2 {
+  .find-category-con h2,
+  .search-page-box-con h2 {
     margin: 0.5rem 0;
   }
 
   .create-blog-con div input,
   .create-blog-con div select,
   .create-blog-con div textarea,
-  .find-category-con select {
+  .find-category-con select,
+  .search-page-box-con input {
     font-size: 1rem;
     background-color: var(--sub-color);
     border-radius: 10px;
@@ -555,15 +561,16 @@ footer {
     justify-content: space-between;
   }
 
-  .find-category {
+  .find-category,
+  .search-page-box {
     position: sticky;
     top: 102px;
     background-color: var(--bg-color);
   }
 
-  .find-category-con {
+  .find-category-con,
+  .search-page-box-con {
     padding: 2rem 0;
-    margin-top: -20px;
     border-bottom: 2px solid var(--content-text-color);
   }
 }
@@ -828,6 +835,10 @@ footer {
   .hero-img img,
   .blog-view-info-cover img {
     height: 600px;
+  }
+
+  .profile-info-con {
+    padding-top: 0rem;
   }
 
   .main-blog-list-con,

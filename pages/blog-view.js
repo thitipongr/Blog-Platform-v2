@@ -38,7 +38,7 @@ fetch("../mock/blog-data.json")
           <div class="blog-view-info-con">
             <div class="blog-view-info-cover">
               <img
-                src="${findData.blog_cove}?auto=compress&cs=tinysrgb&w=2560"
+                src="${findData.blog_cover}?auto=compress&cs=tinysrgb&w=2560"
                 alt="cover-img"
               />
               <h1>${findData.title}</h1>
