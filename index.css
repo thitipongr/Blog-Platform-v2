@@ -1,8 +1,15 @@
-:root {
+.theme-dark {
   --frame-color: #2e2e2e;
   --bg-color: #0c0c0c;
   --sub-color: #191919;
   --content-text-color: #cccccc;
+}
+
+.theme-light {
+  --frame-color: #c5c5c5;
+  --bg-color: #ffffff;
+  --sub-color: #e2e2e2;
+  --content-text-color: #000000;
 }
 
 * {
@@ -11,10 +18,12 @@
   box-sizing: border-box;
   font-family: "Lucida Sans Unicode";
   color: var(--content-text-color);
+  transition: color 1s ease, color 1s ease;
 }
 
 body {
   background-color: var(--bg-color);
+  transition: background-color 1s ease, color 1s ease;
 }
 
 .container {
@@ -24,6 +33,7 @@ body {
 
 header {
   border-top: 10px solid var(--sub-color);
+  transition: border 1s ease, color 1s ease;
   position: fixed;
   top: 0px;
   width: 100%;
@@ -49,7 +59,9 @@ header {
 
 footer {
   border-top: 10px solid var(--sub-color);
+  transition: border 1s ease, color 1s ease;
   background-color: var(--frame-color);
+  transition: background-color 1s ease, color 1s ease;
   padding: 2rem 0;
 }
 
@@ -58,6 +70,7 @@ footer {
     display: flex;
     align-items: center;
     background-color: var(--frame-color);
+    transition: background-color 1s ease, color 1s ease;
   }
 
   .nav-con {
@@ -81,6 +94,7 @@ footer {
 
   .menu {
     border-top: 1px solid var(--sub-color);
+    transition: border 1s ease, color 1s ease;
     display: none;
     flex-direction: column;
     list-style: none;
@@ -88,6 +102,7 @@ footer {
     margin-bottom: 0px;
     width: 100%;
     background-color: var(--frame-color);
+    transition: background-color 1s ease, color 1s ease;
   }
 
   .menu-display {
@@ -131,6 +146,7 @@ footer {
     padding-top: 0.5rem;
     text-decoration: none;
     color: var(--frame-color);
+    transition: color 1s ease, color 1s ease;
   }
 
   .nav-search-box {
@@ -138,6 +154,7 @@ footer {
     padding-left: 2rem !important;
     font-size: 1rem;
     background-color: var(--sub-color);
+    transition: background-color 1s ease, color 1s ease;
   }
 
   .menu div {
@@ -150,6 +167,7 @@ footer {
     font-size: 1.25rem;
     height: 35px;
     border: 0.2rem solid var(--content-text-color);
+    transition: border 1s ease, color 1s ease;
     border-radius: 10px;
     width: 100%;
     margin-top: 2rem;
@@ -159,13 +177,25 @@ footer {
   .nav-login-btn,
   .create-blog-public-btn {
     background-color: var(--frame-color);
+    transition: background-color 1s ease, color 1s ease;
   }
 
   .nav-signup-btn,
   .create-blog-draft-btn {
     margin-left: 0.2rem;
     background-color: var(--content-text-color);
+    transition: background-color 1s ease, color 1s ease;
     color: var(--frame-color);
+    transition: color 1s ease, color 1s ease;
+  }
+
+  .changeTheme {
+    margin-left: 1rem;
+    font-size: 2rem;
+  }
+
+  #moon {
+    width: 2rem;
   }
 
   .menu .statistical {
@@ -194,6 +224,7 @@ footer {
     font-size: 2rem;
     padding-bottom: 2rem;
     border-bottom: 2px solid var(--content-text-color);
+    transition: border 1s ease, color 1s ease;
     margin-bottom: 2rem;
   }
 
@@ -223,6 +254,7 @@ footer {
     object-fit: cover;
     margin-bottom: 1rem;
     border: 2px solid var(--content-text-color);
+    transition: border 1s ease, color 1s ease;
     border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
   }
@@ -268,6 +300,7 @@ footer {
   .profile-blog-item-category-badge,
   .popular-blogs-list-item .category-item {
     border: 1px solid var(--content-text-color);
+    transition: border 1s ease, color 1s ease;
     border-radius: 1rem;
     padding: 0 0.5rem;
     margin-right: 0.5rem;
@@ -312,6 +345,7 @@ footer {
     height: 42px;
     object-fit: cover;
     border: 2px solid var(--content-text-color);
+    transition: border 1s ease, color 1s ease;
     border-radius: 50%;
     margin-right: 0.5rem;
   }
@@ -365,6 +399,7 @@ footer {
 
   .blog-view-writer {
     background-color: var(--sub-color);
+    transition: background-color 1s ease, color 1s ease;
     padding: 2rem 0;
   }
 
@@ -382,6 +417,7 @@ footer {
     height: 62px;
     object-fit: cover;
     border: 2px solid var(--content-text-color);
+    transition: border 1s ease, color 1s ease;
     border-radius: 50%;
     margin: auto 0;
   }
@@ -393,6 +429,7 @@ footer {
     border: 0px;
     border-radius: 2rem;
     background-color: var(--frame-color);
+    transition: background-color 1s ease, color 1s ease;
     padding: 1rem;
   }
 
@@ -443,6 +480,7 @@ footer {
     padding-right: 2rem !important;
     font-size: 1rem;
     background-color: var(--sub-color);
+    transition: background-color 1s ease, color 1s ease;
     border-radius: 10px;
     border: 0px;
     padding: 0.5rem;
@@ -475,6 +513,7 @@ footer {
   .search-page-box-con input {
     font-size: 1rem;
     background-color: var(--sub-color);
+    transition: background-color 1s ease, color 1s ease;
     border-radius: 10px;
     border: 0px;
     padding: 0.5rem;
@@ -489,6 +528,10 @@ footer {
 
   .create-blog-main button {
     margin: 0.5rem 0;
+  }
+
+  .create-blog-con {
+    padding-top: 0.5rem;
   }
 
   .profile-info-name-pic img {
@@ -554,6 +597,7 @@ footer {
 
   .popular-blogs {
     background-color: var(--sub-color);
+    transition: background-color 1s ease, color 1s ease;
     margin-top: 2rem;
   }
 
@@ -563,10 +607,12 @@ footer {
     position: sticky;
     top: 102px;
     background-color: var(--sub-color);
+    transition: background-color 1s ease, color 1s ease;
   }
 
   .main-blog-list h1 {
     background-color: var(--bg-color);
+    transition: background-color 1s ease, color 1s ease;
     margin-bottom: 0;
   }
 
@@ -584,12 +630,14 @@ footer {
     position: sticky;
     top: 102px;
     background-color: var(--bg-color);
+    transition: background-color 1s ease, color 1s ease;
   }
 
   .find-category-con,
   .search-page-box-con {
     padding: 2rem 0;
     border-bottom: 2px solid var(--content-text-color);
+    transition: border 1s ease, color 1s ease;
   }
 }
 
@@ -653,6 +701,7 @@ footer {
     height: 25px;
     object-fit: cover;
     border: 2px solid var(--content-text-color);
+    transition: border 1s ease, color 1s ease;
     border-radius: 50%;
     margin-right: 0.25rem;
   }
@@ -716,6 +765,7 @@ footer {
     padding-top: 2rem;
     padding-bottom: 1rem;
     border-bottom: 2px solid var(--frame-color);
+    transition: border 1s ease, color 1s ease;
   }
 
   .profile-blog-top-name {
