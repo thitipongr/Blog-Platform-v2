@@ -16,12 +16,13 @@
         <div class="container">
           <div class="nav-con">
             <div class="logo" onclick="menuExpand()">
-              <a href="#"> <i class="fa-solid fa-blog"> </i> Blog Platform </a>
+              <a href="index.html">
+                <i class="fa-solid fa-blog"> </i> Blog Platform
+              </a>
             </div>
             <ul class="menu" id="nav-menu">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Create Blog</a></li>
-              <li><a href="#">Blog List</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="pages/blog-create.html">Create Blog</a></li>
               <div>
                 <a href="#" id="icon-search"
                   ><i class="fa-solid fa-magnifying-glass"></i
@@ -29,8 +30,18 @@
                 <input type="text" class="nav-search-box" />
               </div>
               <div>
-                <button class="nav-login-btn">Log in</button>
-                <button class="nav-signup-btn">Sign up</button>
+                <button
+                  class="nav-login-btn"
+                  onclick="window.location.href = 'pages/profile-view.html';"
+                >
+                  Log in
+                </button>
+                <button
+                  class="nav-signup-btn"
+                  onclick="window.location.href = 'pages/profile-view.html';"
+                >
+                  Sign up
+                </button>
               </div>
             </ul>
           </div>
@@ -104,12 +115,13 @@
         <div class="container">
           <div class="popular-blogs-con">
             <h1>Popular Blog</h1>
-            <div class="popular-blogs-list" id="popular-blogs-list"></div>
+            <div class="popular-blogs-list" id="popular-blogs-list-start"></div>
           </div>
         </div>
       </section>
       <section class="main-blog-list">
         <div class="container">
+          <h1>Blog List</h1>
           <div class="main-blog-list-con">
             <div class="main-blog-list-item">
               <div class="main-blog-list-img">
@@ -810,15 +822,6 @@
       type="text/javascript"
       src="script/Popular Blogs Section/PopularBlogsSection-main.js"
     ></script>
-    <script>
-      const menuExpand = () => {
-        const menuList = document.getElementById("nav-menu");
-        if (menuList.className === "menu") {
-          menuList.className += " menu-display";
-        } else {
-          menuList.className = "menu";
-        }
-      };
-    </script>
+    <script type="text/javascript" src="script/navbar.js"></script>
   </body>
 </html>
