@@ -21,6 +21,7 @@
             <ul class="menu" id="nav-menu">
               <li><a href="#">Home</a></li>
               <li><a href="#">Create Blog</a></li>
+              <li><a href="#">Blog List</a></li>
               <div>
                 <a href="#" id="icon-search"
                   ><i class="fa-solid fa-magnifying-glass"></i
@@ -96,6 +97,14 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+      <section class="popular-blogs">
+        <div class="container">
+          <div class="popular-blogs-con">
+            <h1>Popular Blog</h1>
+            <div class="popular-blogs-list" id="popular-blogs-list"></div>
           </div>
         </div>
       </section>
@@ -802,7 +811,6 @@
       src="script/Popular Blogs Section/PopularBlogsSection-main.js"
     ></script>
     <script>
-
       const menuExpand = () => {
         const menuList = document.getElementById("nav-menu");
         if (menuList.className === "menu") {
