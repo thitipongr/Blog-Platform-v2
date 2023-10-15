@@ -168,6 +168,23 @@ footer {
     color: var(--frame-color);
   }
 
+  .menu .statistical {
+    margin-left: 1rem;
+    font-size: 0.75rem;
+    display: block;
+  }
+
+  .menu .statistical-blogs,
+  .menu .statistical-views {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .menu .statistical-views {
+    margin-bottom: 2rem;
+  }
+
   main {
     margin-top: 102px;
     min-height: calc(100vh - 62px - 102px - 2rem);
@@ -300,7 +317,8 @@ footer {
   }
 
   .blog-view-info-detail-intro-writer-con,
-  .find-category {
+  .find-category,
+  .search-page-box {
     margin: 2rem 0;
   }
 
@@ -815,7 +833,7 @@ footer {
 
   .menu input {
     min-width: 100px;
-    width: 100%;
+    width: 110px;
   }
 
   .nav-search-box {
@@ -830,6 +848,10 @@ footer {
     min-width: 90px;
     margin-top: auto;
     margin-bottom: auto;
+  }
+
+  .menu .statistical-views {
+    margin-bottom: 0rem;
   }
 
   .hero-img img,

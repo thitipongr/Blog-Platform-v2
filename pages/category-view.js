@@ -12,7 +12,7 @@ fetch("../mock/blog-data.json")
   .then((sortedData) => {
     let setHtml = "";
     sortedData.forEach((sortedData_data) => {
-      if (sortedData_data.category === searchInput) {
+      if (sortedData_data.category === category) {
         setHtml += `<option value="${sortedData_data.category}" selected="selected">${sortedData_data.category}</option>`;
       } else {
         setHtml += `<option value="${sortedData_data.category}">${sortedData_data.category}</option>`;
@@ -74,7 +74,7 @@ const filterCategory = (value) => {
                 </div>
                 <div class="category-view">
                   <div class="category-list">
-                    <div class="category-item">${getDatas_data.category}</div>
+                    <div class="category-item" onclick="location.href = 'category-view.html?category=${getDatas_data.category}'">${getDatas_data.category}</div>
                   </div>
                   <div class="view">${getDatas_data.views} views</div>
                 </div>
@@ -106,7 +106,7 @@ const filterCategory = (value) => {
               </div>
               <div class="category-view">
                 <div class="category-list">
-                  <div class="category-item">${getDatas_data.category}</div>
+                  <div class="category-item" onclick="location.href = 'category-view.html?category=${getDatas_data.category}'">${getDatas_data.category}</div>
                 </div>
                 <div class="view">${getDatas_data.views} views</div>
               </div>
@@ -123,4 +123,4 @@ const filterCategory = (value) => {
     .catch((err) => console.log("error:", err));
 };
 
-filterCategory(searchInput || "All");
+filterCategory(category || "All");

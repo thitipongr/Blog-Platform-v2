@@ -34,7 +34,11 @@ const filterCategory = (value) => {
                 </div>
                 <div class="category-view">
                   <div class="category-list">
-                    <div class="category-item">${getDatas_data.category}</div>
+                    <div 
+                      class="category-item" 
+                      onclick="location.href = 'category-view.html?category=${getDatas_data.category}'"
+                      >${getDatas_data.category}
+                    </div>
                   </div>
                   <div class="view">${getDatas_data.views} views</div>
                 </div>
@@ -66,7 +70,11 @@ const filterCategory = (value) => {
               </div>
               <div class="category-view">
                 <div class="category-list">
-                  <div class="category-item">${getDatas_data.category}</div>
+                  <div 
+                    class="category-item" 
+                    onclick="location.href = 'category-view.html?category=${getDatas_data.category}'">
+                    ${getDatas_data.category}
+                  </div>
                 </div>
                 <div class="view">${getDatas_data.views} views</div>
               </div>

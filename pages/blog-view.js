@@ -1,4 +1,5 @@
 const id = location.search.slice(4);
+
 fetch("../mock/blog-data.json")
   .then((response) => response.json())
   .then((getData) => {
@@ -109,6 +110,12 @@ fetch("../mock/blog-data.json")
                         ${postDate}
                         </div>
                       </div>
+                      <div
+                        class="blog-view-info-detail-intro-writer-published-group-dot"
+                      >
+                        ·
+                      </div>
+                      ${intToString(findData.views)} views
                     </div>
                   </div>
                 </div>
