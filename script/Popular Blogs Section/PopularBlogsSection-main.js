@@ -8,7 +8,7 @@ fetch("mock/blog-data.json")
       setHtml += `<div class="popular-blogs-list-item">
       <div class="img">
         <img
-          src="${popularBlogs_data.blog_cove}?auto=compress&cs=tinysrgb&w=2560"
+          src="${popularBlogs_data.blog_cover}?auto=compress&cs=tinysrgb&w=2560"
           alt="popular-blog-list-img"
         />
       </div>
@@ -39,6 +39,6 @@ fetch("mock/blog-data.json")
   })
   .catch((err) => console.log("error:", err));
 
-function compareByView(a, b) {
+const compareByView = (a, b) => {
   return b.views - a.views;
-}
+};

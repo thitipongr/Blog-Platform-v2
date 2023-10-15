@@ -2,27 +2,14 @@ const id = location.search.slice(4);
 fetch("../mock/blog-data.json")
   .then((response) => response.json())
   .then((getData) => {
-    let findData = getData.blogs.find((getData_data) => {
+    const findData = getData.blogs.find((getData_data) => {
       return getData_data.id == id;
     });
     return findData;
   })
   .then((findData) => {
-    //   {
-    //     "id": 356,
-    //     "title": "Internal Auditor",
-    //     "category": "Marlite Panels (FED)",
-    //     "blog_cove": "https://images.pexels.com/photos/1067333/pexels-photo-1067333.jpeg",
-    //     "content": "Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.\n\nDuis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
-    //     "author_cover": "https://images.pexels.com/photos/598917/pexels-photo-598917.jpeg",
-    //     "author": "Seward",
-    //     "views": 996,
-    //     "post_date": "2020-11-05T03:14:00Z"
-    // }
     const readingTime = Math.floor(findData.content.split(" ").length / 200);
-
     const date = new Date(findData.post_date);
-
     const months = [
       "Jan",
       "Feb",

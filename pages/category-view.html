@@ -48,48 +48,19 @@
       </nav>
     </header>
     <main>
-      <section class="create-blog-main">
+      <section class="find-category">
         <div class="container">
-          <div class="create-blog-con">
-            <form action="">
-              <div class="create-blog-title-con">
-                <label for="title"><h2>Title:</h2></label>
-                <input type="text" id="title" required />
-              </div>
-
-              <div class="create-blog-cover-con">
-                <label for="cover"><h2>Blog Cover:</h2></label>
-                <input type="file" id="cover" accept="image/png, image/jpeg" />
-              </div>
-
-              <div class="create-blog-category-con">
-                <label for="category"><h2>Category:</h2></label>
-                <select id="category">
-                  <option value="category-0"></option>
-                  <option value="category-1">Lorem.</option>
-                  <option value="category-2">Quia?</option>
-                  <option value="category-3">Architecto.</option>
-                  <option value="category-4">Consequuntur!</option>
-                  <option value="category-5">Amet.</option>
-                  <option value="category-6">Provident!</option>
-                  <option value="category-7">Ratione!</option>
-                  <option value="category-8">Lorem!</option>
-                  <option value="category-9">Ipsum.</option>
-                  <option value="category-10">Dolor.</option>
-                </select>
-              </div>
-
-              <div class="create-blog-content-con">
-                <label for="content"><h2>Content:</h2></label>
-                <textarea id="content" required></textarea>
-              </div>
-
-              <div class="create-blog-button-con">
-                <button class="create-blog-public-btn">Public</button>
-                <button class="create-blog-draft-btn">Save Draft</button>
-              </div>
-            </form>
+          <div class="find-category-con">
+            <label for="category"><h2>Category:</h2></label>
+            <select id="category" onchange="filterCategory(value)">
+              <option value="All">All</option>
+            </select>
           </div>
+        </div>
+      </section>
+      <section class="category-blog-list">
+        <div class="container">
+          <div class="category-blog-list-con" id="popular-blogs-list"></div>
         </div>
       </section>
     </main>
@@ -109,5 +80,6 @@
       </div>
     </footer>
     <script type="text/javascript" src="../script/navbar.js"></script>
+    <script type="text/javascript" src="category-view.js"></script>
   </body>
 </html>
