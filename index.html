@@ -32,13 +32,13 @@
               <div>
                 <button
                   class="nav-login-btn"
-                  onclick="window.location.href = 'pages/profile-view.html';"
+                  onclick="location.href = 'pages/profile-view.html';"
                 >
                   Log in
                 </button>
                 <button
                   class="nav-signup-btn"
-                  onclick="window.location.href = 'pages/profile-view.html';"
+                  onclick="location.href = 'pages/profile-view.html';"
                 >
                   Sign up
                 </button>
@@ -62,7 +62,10 @@
             <div class="hero-info-con">
               <div class="hero-info-article">
                 <h3>Lorem ipsum dolor sit amet consectetur</h3>
-                <i class="fa-solid fa-up-right-from-square"></i>
+                <i
+                  class="fa-solid fa-up-right-from-square"
+                  onclick="location.href = 'pages/blog-view.html';"
+                ></i>
               </div>
               <div class="hero-info-detail-con">
                 <div class="hero-info-detail-maindetail-con">
@@ -115,14 +118,14 @@
         <div class="container">
           <div class="popular-blogs-con">
             <h1>Popular Blog</h1>
-            <div class="popular-blogs-list" id="popular-blogs-list-start"></div>
+            <div class="popular-blogs-list" id="popular-blogs-list"></div>
           </div>
         </div>
       </section>
       <section class="main-blog-list">
         <div class="container">
           <h1>Blog List</h1>
-          <div class="main-blog-list-con">
+          <div class="main-blog-list-con" id="">
             <div class="main-blog-list-item">
               <div class="main-blog-list-img">
                 <img

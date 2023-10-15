@@ -3,9 +3,9 @@ fetch("mock/blog-data.json")
   .then((data) => data.blogs.sort(compareByView))
   .then((sortedData) => sortedData.slice(0, 10))
   .then((popularBlogs) => {
-    let setHtmlStart = "";
+    let setHtml = "";
     popularBlogs.map((popularBlogs_data) => {
-      setHtmlStart += `<div class="popular-blogs-list-item">
+      setHtml += `<div class="popular-blogs-list-item">
       <div class="img">
         <img
           src="${popularBlogs_data.blog_cove}?auto=compress&cs=tinysrgb&w=2560"
@@ -14,7 +14,10 @@ fetch("mock/blog-data.json")
       </div>
       <div class="title">
         <h3>${popularBlogs_data.title}</h3>
-        <i class="fa-solid fa-up-right-from-square"></i>
+        <i 
+          class="fa-solid fa-up-right-from-square" 
+          onclick="location.href = 'pages/blog-view.html?id=${popularBlogs_data.id}';"
+        ></i>
       </div>
       <div class="content">
         <p>
@@ -29,10 +32,10 @@ fetch("mock/blog-data.json")
       </div>
     </div>`;
     });
-    return [setHtmlStart];
+    return setHtml;
   })
   .then((setHtml) => {
-    document.getElementById("popular-blogs-list-start").innerHTML += setHtml;
+    document.getElementById("popular-blogs-list").innerHTML += setHtml;
   })
   .catch((err) => console.log("error:", err));
 
