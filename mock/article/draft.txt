@@ -1,0 +1,245 @@
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+เรียงข้อมูล Array - Object ด้วย JavaScript sort function
+
+สรุปสั้น ๆ ก่อนเริ่มอ่าน
+สำหรับใครที่ได้เริ่มหัดเขียน web application ที่จะเป็นต้องดึงข้อมูลมาจากแหล่างอื่น เช่น Local json File หรือ API แต่ติดปัญหาว่ว ข้อมูลดิบที่ได้มานั้น ไม่ถูกเรียงลำดับมาให้อย่างถูกต้อง หรือไม่เป็นไปตามที่ต้องการ แล้วไม่แน่ใจว่าจะจัดการกับปัญหานี้อย่างไรดี ใบบทความนี้ ผมก็จะมาเสนอวิธีจัดเรียงข้อมูลสำหรับทั้ง Array และ Object ตั้งแต่การจัดเรียงเบื้อนต้น จนไปถึง การจัดเรียงแบบปลายปัจจัยในคราวเดียว ด้วย Function sort ของ JavaScript ให้ทุกคนกันครับ และเมื่ออ่านจบแล้ว เราก็จะไม่กลัวปัญหาขอมูลเรียงไม่ได้ดั่งใจกันอีกต่อไป !!
+
+[btd_post_author] 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Array sort() String
+arr.sort() เป็นคำสั่งจัดเรียงข้อมูลตาม องค์ประกอบ (Element) หรือข้อมูลใน Array โดยจะเรียง Element เป็นสตริงตามลำดับตัวอักษรจากน้อยไปมาก หรือในทางกลับกัน สามารถใช้ arr.reverse() ในการลำดับตัวอักษรจากมากไปน้อย ซึ่งผลลัพธ์ จะถูกเขียนทับ Array เก่าในทันทีเมื่อถูกเรียกใช้ เพราะฉะนั้น แนะนำว่า หากจะเรียกใช้ ควร Clone data ก่อนใช้ เพื่อป้องกันปัญหา
+
+ตัวอย่างการใช้งาน 
+...
+const firstName = ["Levey", "margalo", "clarence", "Nettle", "Thalia"]; 
+firstName.sort(); // Outputs: ['Levey', 'Nettle', 'Thalia', 'clarence', 'margalo']
+firstName.reverse(); // Outputs: ['margalo', 'clarence', 'Thalia', 'Nettle', 'Levey']
+...
+
+ref: https://www.w3schools.com/jsref/jsref_sort.asp
+
+จะเห็นว่า Outputs นั้น จะเรียงจากตัวอักษรพิมพ์ใหญ่ไปตัวอักษรพิมพ์เล็ก เพราะ อะไรกัน มาดูพื้นฐานการลำดับตัวอักษรกันน
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+พื้นฐานการลำดับตัวอักษร
+ในการลำดับตัวอักษรใน JavaScript โดยปกติแล้ว จะเรียงตามตัวเลขที่เป็น Unicode Code ซึ่งสามารถตรวจสอบได้ด้วยคำสั่ง charCodeAt() เช่น
+
+...
+const txt = 'Thitipong'
+txt.charCodeAt(0); // Outputs: 84
+txt.charCodeAt(1); // Outputs: 104
+txt.charCodeAt(2); // Outputs: 105
+txt.charCodeAt(3); // Outputs: 116
+txt.charCodeAt(4); // Outputs: 105
+txt.charCodeAt(5); // Outputs: 112
+txt.charCodeAt(6); // Outputs: 111
+txt.charCodeAt(7); // Outputs: 110
+txt.charCodeAt(8); // Outputs: 103
+txt.charCodeAt(9); // Outputs: NaN
+...
+
+คำสั่ง charCodeAt() เป็น Method ที่จะส่งคืนค่า Unicode Code ณ ตัวอักษรที่เจาะจง ตามเลข Array ที่เป็น parameter
+โดยจะมีข้อสังเกตว่า ตัวอักษรพิมพ์เล็ก กับ ตัวอักษรพิมพ์ใหญ่ เลข Unicode Code ก็จะไม่เท่ากัน ทำให้เวลา sort ตัวพิมพ์ใหญ่ ก็จะอยู่ด้านหน้าเสมอ
+
+ref: https://www.w3schools.com/jsref/jsref_charcodeat.asp
+ref: https://www.borntodev.com/2021/08/30/รวมเทคนิค-array-sort-ใน-javascript/
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+การเรียงแบบไม่สนตัวอักษรพิมพ์เล็กพิมพ์ใหญ่
+ในการจัดเรียงตัวอักษรแบบไม่สนใจตัวอักษรพิมพ์เล็กพิมพ์ใหญ่ จำเป็นต้องใช้คำสั่งเพิ่มเติม นั่นก็คือ เช็ตให้ค่าทั้งหมดเป็น ตัวอักษรพิมพ์เล็กด้วย toLowerCase() แล้ว localeCompare โดย localeCompare เป็น Method ที่จะเปรียบเทียบระหว่าง สอง String ด้วยพื้นฐานของแต่ละพื้นที่ ที่อ้างอิงจาก ภาษาที่ถูกตั้งค่าใน Browser ซึงจะส่งคืนค่า เป็นผลของลำดับ เป็น -1 หมายถึง มาก่อน ,0 หมายถึง ค่าเท่ากัน และ 1 หมายถึง มาทีหลัง ดังนี้
+
+...
+const txt1 = "aaAAa";
+const txt2 = "BbBbb";
+const txt3 = "AaaaA";
+txt1.toLowerCase().localeCompare(txt2.toLowerCase()); // Outputs: -1 หรือหมายถึง txt1 มาก่อน txt2
+txt2.toLowerCase().localeCompare(txt1.toLowerCase()); // Outputs: 1 หรือหมายถึง txt2 มาทีหลัง txt1
+txt3.toLowerCase().localeCompare(txt1.toLowerCase()); // Outputs: 0 หรือหมายถึง txt1 ค่าเท่ากัน txt2
+...
+
+ref: https://www.w3schools.com/jsref/jsref_localecompare.asp
+
+ดังนั้น เมื่อนำมาประยุกต์กับ sort() ก็จะเป็น 
+
+...
+const firstName = ["Levey", "margalo", "clarence", "Nettle", "Thalia"]; 
+firstName.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase())); // Outputs: ['clarence', 'Levey', 'margalo', 'Nettle', 'Thalia']
+firstName.reverse((a, b) => a.toLowerCase().localeCompare(b.toLowerCase())); // Outputs:  ['Thalia', 'Nettle', 'margalo', 'Levey', 'clarence']
+...
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Array sort() Number and Date
+ในการจัดเรียงตัวเลข จะไม่สามารถใช้ sort() ตรง ๆ ได้ เพราะ sort() จะเรียงตามลำดับของ String เช่น 35 และ 135 การใช้ sort() ปกติ 135 จะมาก่อน 35 เพราะคำสั่ง sort() จะดูที่ตัวอักษรที่ละตัว จากตัวแรก ดังนี้ 
+
+...
+const myNumber = [94, 97, 535, 771, 50];
+myNumber.sort(); // Outputs:  [50, 535, 771, 94, 97]
+...
+
+วิธีแก้ คือ ต้อง Feed ให้ค่อย ๆ เปลี่ยนเทียบค่าทีละตัว เป็น
+
+...
+const myNumber = [94, 97, 535, 771, 50];
+myNumber.sort((a, b) => a - b); // Outputs:  [50, 94, 97, 535, 771]
+myNumber.sort((a, b) => b - a); // Outputs:  [771, 535, 97, 94, 50]
+...
+
+ในอีกมุม สำหรับ Date เราก็ใช้ new Date() เข้ามาช่วย และก็ต้อง Feed ให้ค่อย ๆ เปลี่ยนเทียบค่าทีละตัว เป็น
+
+...
+const myDate = ["2023-04-19", "2022-07-16", "2021-07-07", "2022-06-26", "2022-07-21"];
+myDate.sort((a, b) => new Date(a) - new Date(b)); // Outputs:  ['2021-07-07', '2022-06-26', '2022-07-16', '2022-07-21', '2023-04-19']
+myDate.sort((a, b) => new Date(b) - new Date(a)); // Outputs:  ['2023-04-19', '2022-07-21', '2022-07-16', '2022-06-26', '2021-07-07']
+...
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Object sort() data
+ในกรณีที่เป็น Object Logic หลัก ๆ นั้น ก็ยังเหมือน Array เพิ่มเติมคือ เราจำเป็นต้องระบุให้ชัดเจน ว่าจะเปรียบเทียบที่ key ไหน ใน Object เช่น 
+
+...
+const blogs = [
+  {
+    "id": 1,
+    "title": "Business Systems Development Analyst",
+    "views": 940,
+  },
+  {
+    "id": 2,
+    "title": "VP Quality Control",
+    "views": 971,
+  },
+  {
+    "id": 3,
+    "title": "Statistician III",
+    "views": 535,
+  },
+  {
+    "id": 4,
+    "title": "Recruiting Manager",
+    "views": 771,
+  },
+  {
+    "id": 5,
+    "title": "Programmer Analyst I",
+    "views": 501,
+  }
+];
+blogs.sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase()));
+...
+
+จะได้ Outputs
+
+...
+Outputs: 
+[
+  {
+    "id": 1,
+    "title": "Business Systems Development Analyst",
+    "views": 940
+  },
+  {
+    "id": 5,
+    "title": "Programmer Analyst I",
+    "views": 501
+  },
+  {
+    "id": 4,
+    "title": "Recruiting Manager",
+    "views": 771
+  },
+  {
+    "id": 3,
+    "title": "Statistician III",
+    "views": 535
+  },
+  {
+    "id": 2,
+    "title": "VP Quality Control",
+    "views": 971
+  }
+]
+...
+
+ในอีกมุมนึง หากต้องการที่จะเปรียบเทียบด้วย สอง ปัจจัย เราก็สามารถทำได้ด้วยคำสั้ง OR ในคำสั่ง sort() เป็น
+
+...
+const blogs = [
+  {
+    "id": 1,
+    "title": "Business Systems Development Analyst",
+    "views": 940,
+  },
+  {
+    "id": 2,
+    "title": "VP Quality Control",
+    "views": 971,
+  },
+  {
+    "id": 3,
+    "title": "Statistician III",
+    "views": 535,
+  },
+  {
+    "id": 4,
+    "title": "Recruiting Manager",
+    "views": 771,
+  },
+  {
+    "id": 5,
+    "title": "Programmer Analyst I",
+    "views": 501,
+  }
+];
+blogs.sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase()) || a.views - b.views);
+...
+
+จะได้ Outputs
+
+...
+[
+  {
+    "id": 1,
+    "title": "Business Systems Development Analyst",
+    "views": 940
+  },
+  {
+    "id": 5,
+    "title": "Programmer Analyst I",
+    "views": 501
+  },
+  {
+    "id": 4,
+    "title": "Recruiting Manager",
+    "views": 771
+  },
+  {
+    "id": 3,
+    "title": "Statistician III",
+    "views": 535
+  },
+  {
+    "id": 2,
+    "title": "VP Quality Control",
+    "views": 971
+  }
+]
+...
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+สุดท้ายก่อนจากกัน
+สำหรับใคร ที่อยากเรียนรู้เกี่ยวกับการ เรียงข้อมูล ด้วย JavaScript sort function ให้มากขึ้น สามารถเข้าไปศึกษาเพิ่มเติมจาก อ้างอิง ด้านล้างนี้ได้เลยนะครับ สำหรับบทความนี้ ถ้ามีข้อผิดพลาดอะไร สามารถแนะนำเข้ามาได้เลยนะครับ ขอบคุณครับ 
+
+อ้างอิง
+JavaScript Array sort() สืบค้นเมื่อ 16 ตุลาคม 2565 จาก: https://www.w3schools.com/jsref/jsref_sort.asp
+JavaScript String charCodeAt() สืบค้นเมื่อ 16 ตุลาคม 2565 จาก: https://www.w3schools.com/jsref/jsref_charcodeat.asp
+รวมเทคนิค Array Sort() ใน JavaScript !! สืบค้นเมื่อ 16 ตุลาคม 2565 จาก: https://www.borntodev.com/2021/08/30/รวมเทคนิค-array-sort-ใน-javascript/
+JavaScript String localeCompare() สืบค้นเมื่อ 16 ตุลาคม 2565 จาก: https://www.w3schools.com/jsref/jsref_localecompare.asp
